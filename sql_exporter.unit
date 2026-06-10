@@ -1,0 +1,18 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=SQL exporter
+Documentation=https://github.com/burningalchemist/sql_exporter
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/sql_exporter
+User=prometheus
+ExecStart=/usr/bin/sql_exporter $SQL_EXPORTER_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5s
+
+
+[Install]
+WantedBy=multi-user.target
