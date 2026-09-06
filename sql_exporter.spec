@@ -3,7 +3,7 @@
 %global group prometheus
 
 Name:    sql_exporter
-Version: 0.24.4
+Version: 0.24.8
 Release: 1%{?dist}
 Summary: SQL exporter
 License: MIT
@@ -54,6 +54,8 @@ exit 0
 %{_unitdir}/%{name}.service
 
 %changelog
+* Sat Sep 05 2026 Ivan Garcia <igarcia@cloudox.org> - 0.24.8
+- CVE addressed: CVE-2026-84304
 * Wed Jun 10 2026 Ivan Garcia <igarcia@cloudox.org> - 0.24.4
 - Security: Add a new workflow to enable automated vulnerability checking for Go code using govulnchec
 - Security: Add a new workflow to enable automated vulnerability checking for released binaries (linux/amd64) using govulncheck
